@@ -10,6 +10,25 @@ h1 {
   text-align: center;
 }
 
+.banner {
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  padding-top: 10px;
+  background: #3bb;
+  text-align: center;
+  font-size: 28px;
+  box-shadow: 0px 2px 8px #000;
+}
+
+.avatar {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  height: 60px;
+  width: 60px;
+}
+
 .wrapper {
   margin: 10px auto;
   width: 1060px;
@@ -83,14 +102,4 @@ tr {
 
 tr:not(:first-of-type):hover {
   background: #3bb;
-}
-
-.goTo {
-
-  width: 100%;
-  height: 40px;
-  padding-top: 8px;
-  background: #3bb;
-  text-align: center;
-  font-size: 24px;
 }

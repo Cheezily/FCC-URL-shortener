@@ -1,7 +1,8 @@
-var urlList = [{url: "http://www.google.com", short: "0"},
-{url: "http://www.cnn.com", short: "1"},
-{url: "http://www.ebay.com", short: "2"},
-{url: "http://www.freecodecamp.com", short: "3"}];
+var urlList = [{url: "http://www.freecodecamp.com", short: "0"},
+  {url: "http://www.google.com", short: "1"},
+  {url: "http://www.cnn.com", short: "2"},
+  {url: "http://www.ebay.com", short: "3"}
+  ];
 
 //adds the passed url to the list and returns the id
 function create(fullUrl) {

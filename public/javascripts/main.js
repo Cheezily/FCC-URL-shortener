@@ -6,9 +6,9 @@ $(document).ready(function() {
     $(this).css('cursor', 'pointer');
     var link = $(this).children('.link').text();
     if (link === "--") {
-      $('.goTo').text("Select a Link From the List");
+      $('.banner').text("Select a Link From the List");
     } else {
-      $('.goTo').text("Let's go to " + ($(this).children('.link').text()));
+      $('.banner').text("Let's go to " + ($(this).children('.link').text()));
     }
   });
 
@@ -23,6 +23,6 @@ $(document).ready(function() {
   //resets the banner text. Otherwise, the last link the user hovered over
   //remains there
   $('table').mouseout(function() {
-    $('.goTo').text("Select a Link From the List");
+    $('.banner').text("Select a Link From the List");
   });
 });
