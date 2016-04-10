@@ -18,10 +18,19 @@ router.get('/:id', function(req, res, next) {
 });
 
 router.get('/new/*', function(req, res, next) {
+
   var url = sanitizer.sanitize(req.url.slice(5));
-  var output = urls.newLink(url) - 1;
-  res.send('{ "original_url":"' +
-    url + '", "short_url":"' + output + '" }');
+
+  //makes sure the url is valid before storing it
+  if (url.substring(0,11) != 'http://www.' &&
+    url.substring(0,12) != 'https://www.') {
+    res.send({"response": "invalid_url_format"});
+  } else {
+    var output = urls.newLink(url) - 1;
+    res.send('{ "original_url":"' +
+      url + '", "short_url":"' + output + '" }');
+  }
+
 });
 
 
