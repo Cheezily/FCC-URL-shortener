@@ -1,0 +1,96 @@
+body {
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  font: 14px Verdana;
+  color: #444;
+}
+
+h1 {
+  text-align: center;
+}
+
+.wrapper {
+  margin: 10px auto;
+  width: 1060px;
+  height: 500px;
+  padding: 10px;
+  border: 3px solid #3bb;
+  border-radius: 6px;
+}
+
+.wrapper p {
+  text-align: center;
+  font-size: 18px;
+  margin: 4px 0 10px 0;
+}
+
+.left {
+  float: left;
+  margin-left: 15px;
+}
+
+.left p {
+  font-size: 14px;
+  text-align: left;
+  margin-left: 20px;
+}
+
+.left h3 {
+  margin-left: 10px;
+}
+
+.right {
+  width: 40%;
+  height: 100%;
+  float: right;
+}
+
+.code {
+  color: #366;
+  background: #d5d5d5;
+}
+
+table {
+  margin: 0 auto;
+  padding: 5px;
+  width: 370px;
+  height: 430px;
+  display: block;
+  overflow-y: scroll;
+  font-family: Verdana;
+  font-size: 14px;
+  text-align: center;
+  border: 3px solid #3bb;
+  border-radius: 6px;
+}
+
+th {
+  border-bottom: 3px solid #3bb;
+}
+
+td {
+  min-width: 100px;
+  max-width: 380px;
+  height: 30px;
+  margin: 0;
+  padding: 2px;
+}
+
+tr {
+  margin-right: 5px;
+}
+
+tr:not(:first-of-type):hover {
+  background: #3bb;
+}
+
+.goTo {
+
+  width: 100%;
+  height: 40px;
+  padding-top: 8px;
+  background: #3bb;
+  text-align: center;
+  font-size: 24px;
+}

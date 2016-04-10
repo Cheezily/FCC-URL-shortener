@@ -1,0 +1,35 @@
+<!doctype html>
+
+<html>
+<% include layout.ejs %>
+<body>
+
+
+    <div class='goTo'>Select a Link From the List</div>
+
+    <h1>FreeCodeCamp Public URL Shortener.  Leave a Link for Others!</h1>
+
+    <div class='wrapper'>
+      <div class='left'>
+        <h2>How to use:</h2>
+        <h3>To create a link:</h3>
+        <p class='code'>https://fcc-shorten-url.herokuapp.com/new/http://www.example.com</p>
+        <br>
+        <p>This will return the following output:</p>
+        <p class='code'>{"original_url": "http://www.example.com","short": "6"}</p>
+        <br>
+        <h2>To use this link:</h2>
+        <p class='code'>https://fcc-shorten-url.herokuapp.com/6</p>
+        <p>Or just click on it from the list to the right -----></p>
+      </div>
+
+
+      <div class='right'>
+        <p>Links others have left:</p>
+        <%- fullList %>
+        </div>
+      </div>
+
+<script src='./javascripts/main.js'></script>
+</body>
+</html>
