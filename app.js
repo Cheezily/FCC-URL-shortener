@@ -4,12 +4,12 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 
-var app = express();
-
 //set up db connection
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
-mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/urls');
+mongoose.connect('mongodb://localhost:27017/urls');
+
+var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

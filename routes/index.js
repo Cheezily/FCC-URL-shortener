@@ -7,7 +7,9 @@ var sanitizer = require('sanitizer');
 
 //displays all
 router.get('/', function(req, res, next) {
-    res.render('index', {fullList: urls.getList()});
+
+  urls.getList(res);
+    //res.render('index', {fullList: urls.getList(res)});
 });
 
 router.get('/:id', function(req, res, next) {
