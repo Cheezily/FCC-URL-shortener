@@ -26,9 +26,7 @@ router.get('/new/*', function(req, res, next) {
     url.substring(0,12) != 'https://www.') {
     res.send({"response": "invalid_url_format"});
   } else {
-    var output = urls.newLink(url) - 1;
-    res.send('{ "original_url":"' +
-      url + '", "short_url":"' + output + '" }');
+    urls.newLink(url, res);
   }
 });
 

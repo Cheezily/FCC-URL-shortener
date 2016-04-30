@@ -1,14 +1,27 @@
 var mongoose = require('mongoose');
 var urlDB = require('../models/urlDB');
 
+
 //adds the passed url to the list and returns the id
-function create(fullUrl) {
-  urlList.push({url: fullUrl, short: urlList.length.toString()});
-  console.log('pushed id: ' + urlList.length.toString() + " for: " + fullUrl);
-  return urlList.length.toString();
+function create(fullUrl, res) {
+  urlDB.count(function(err, count) {
+    if (err) throw err;
+    console.log(count);
+    var urlSubmitted = new urlDB({
+      "url": fullUrl,
+      "short": count.toString()
+    });
+
+    urlSubmitted.save(function(err) {
+      res.send('{ "original_url":"' +
+        fullUrl + '", "short_url":"' + count + '" }');
+    })
+  })
 };
 
+
 //output a table containing all of the links in urlList array
+// "res" needs to be passed since db call is async
 function getAllHTML(res) {
 
   urlDB.find({}, function(err, dbDump) {
@@ -38,8 +51,8 @@ function getAllHTML(res) {
 
 
 module.exports = {
-  newLink: function(fullUrl) {
-    return create(fullUrl);
+  newLink: function(fullUrl, res) {
+    create(fullUrl, res);
   },
   getLink: function(id) {
     return urlList[id]['url'];
