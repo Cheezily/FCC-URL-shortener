@@ -46,7 +46,21 @@ function getAllHTML(res) {
 
     res.render('index', {fullList: output});
   });
+}
 
+
+function goToLink(id, res) {
+  console.log("ID: " + id);
+  urlDB.findOne({"short": id.toString()}, function(err, result) {
+    if (err) throw err;
+
+    if (result) {
+      res.redirect(result.url);
+    } else {
+      res.end('Invlaid Link.  Please go back and try again.');
+    }
+
+  })
 }
 
 
@@ -54,11 +68,10 @@ module.exports = {
   newLink: function(fullUrl, res) {
     create(fullUrl, res);
   },
-  getLink: function(id) {
-    return urlList[id]['url'];
+  getLink: function(id, res) {
+    goToLink(id, res);
   },
   getList: function(res) {
     getAllHTML(res);
-
   }
 };

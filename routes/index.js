@@ -7,17 +7,15 @@ var sanitizer = require('sanitizer');
 
 //displays all
 router.get('/', function(req, res, next) {
-
   urls.getList(res);
-    //res.render('index', {fullList: urls.getList(res)});
 });
+
 
 router.get('/:id', function(req, res, next) {
-
     var id = Number(req.params['id']);
-    var output = urls.getLink(id);
-    res.redirect(output);
+    urls.getLink(id, res);
 });
+
 
 router.get('/new/*', function(req, res, next) {
   var url = sanitizer.sanitize(req.url.slice(5));
