@@ -6,6 +6,11 @@ var routes = require('./routes/index');
 
 var app = express();
 
+//set up db connection
+var mongo = require('mongodb');
+var mongoose = require('mongoose');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/urls');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
