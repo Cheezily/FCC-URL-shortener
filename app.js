@@ -7,7 +7,7 @@ var routes = require('./routes/index');
 //set up db connection
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/urls');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/urls');
 
 var app = express();
 
