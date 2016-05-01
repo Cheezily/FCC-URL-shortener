@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var urls = require('../modules/urls');
+var path = require('path');
+var urls = require(path.normalize('../modules/urls'));
 
 //just to stay safe with user input in the 'new' route
 var sanitizer = require('sanitizer');
