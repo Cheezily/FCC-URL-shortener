@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var path = require('path');
-var urlDB = require(path.normalize('../models/urldb'));
+var urlDB = require('../models/urldb');
 
 
 //adds the passed url to the list and returns the id
