@@ -6,5 +6,5 @@ var urlsSchema = new Schema({
   short: {type: String, requried: true, unique: true}
 });
 
-var urlsDB = mongoose.model('urls', urlsSchema);
-module.exports = urlsDB;
+var urlDB = mongoose.model('urls', urlsSchema);
+module.exports = urlDB;
