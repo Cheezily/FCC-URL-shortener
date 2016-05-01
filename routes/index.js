@@ -8,7 +8,8 @@ var sanitizer = require('sanitizer');
 
 //displays all
 router.get('/', function(req, res, next) {
-  urls.getList(res);
+  res.end('hi');
+  //urls.getList(res);
 });
 
 
